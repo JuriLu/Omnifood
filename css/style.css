@@ -22,11 +22,11 @@ Default:1
 #555
 #333
 
---- 05 SHADOWS
+--- 03 SHADOWS
 
---- 06 BORDER-RADIUS
+--- 04 BORDER-RADIUS
 
---- 07 WHITESPACE
+--- 05 WHITESPACE
 
 -SPACTING SYSTEM (px):
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
@@ -55,21 +55,9 @@ body {
     color: #555;
 }
 
-.section-hero {
-    background-color: #fdf2e9;
-    padding: 9.6rem 0;
-}
-
-
-.hero {
-    max-width: 130rem; /* responsiveness fix */
-    margin: 0 auto; /* Center into viewport trick */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 9.6rem;
-}
-
+/*****************************/
+/*GENERAL REUSABLE COMPONENTS*/
+/*****************************/
 .heading-primary {
     font-size: 5.2rem;
     font-weight: 700;
@@ -77,12 +65,6 @@ body {
     color: #333;
     letter-spacing: -0.5px;
     margin-bottom: 3.2rem;
-}
-
-.hero-description {
-    font-size: 2rem;
-    line-height: 1.6;
-    margin-bottom: 4.8rem
 }
 
 .btn:link,
@@ -118,19 +100,67 @@ body {
 .btn--outline:active {
     background-color: #fdf2e9;
 
-    /*border: 3px solid white;*/
+    /*border: 3px solid white; !BORDER WILL BE ADDED ON THE OUTSIDE*/
 
     /* Trick to add border inside */
     box-shadow: inset 0 0 0 3px #fff;
 }
 
+.margin-right-sm {
+    margin-right: 1.6rem !important;
+}
+
+/*****************************/
+         /* HEADER */
+/*****************************/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdf2e9;
+
+    /*To Make the header sticky*/
+    height: 9.6rem;
+    padding: 0 4.8rem;
+}
+
+.logo {
+    height: 2.2rem
+}
+
+/*****************************/
+       /* HERO SECTION */
+/*****************************/
+
+.section-hero {
+    background-color: #fdf2e9;
+    padding: 9.6rem 0;
+}
+
+
+.hero {
+    max-width: 130rem; /* responsiveness fix */
+    margin: 0 auto; /* Center into viewport trick */
+    /*padding: 0 3.2rem;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 9.6rem;
+}
+
+.hero-description {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem
+}
+
+
+
 .hero-img {
     width: 100%;
 }
 
-.margin-right-sm {
-    margin-right: 1.6rem !important;
-}
+
 
 .delivered-meals {
     display: flex;
