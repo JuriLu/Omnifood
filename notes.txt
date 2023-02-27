@@ -37,3 +37,24 @@ The process building of a webstite
         Install ANALYTICS SOFTWARE (Google Analytics of Fathom) 
          These may inform future changes in the site structure and 
          content
+
+
+Responsive Design Ingredients
+
+1. Fluid Layouts
+        Allow the webpage to adapt to current viewport width
+        Use % of VH/VW
+        Use max-width
+
+2. Responsive Units
+        Use Rem instead for px
+
+3. Flexible Images 
+        Use % for image dimensions, together with max-width property
+
+4. Media Queries
+        Breakpoints
+
+
+Design Strategy
+        Desktop-First vs Mobile-First
