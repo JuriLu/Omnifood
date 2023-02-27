@@ -12,8 +12,13 @@
 
     -Line heights:
     Default: 1
-    Small : 1.05
+    Small: 1.05
+    Medium: 1.2
     Paragraph default: 1.6
+
+    -Letter Spacing
+    0.5px
+    0.75px
 
 --- 02 COLORS
 
@@ -85,18 +90,39 @@ body {
     grid-template-columns: repeat(4, 1fr);
 }
 
+/* These propertieses are the same for primary and secondary */
+.heading-primary,
+.heading-secondary{
+    font-weight: 700;
+    color: #45260a;
+    letter-spacing: -0.5px;
+}
+
 .heading-primary {
     font-size: 5.2rem;
-    font-weight: 700;
     line-height: 1.05;
-    color: #333;
-    letter-spacing: -0.5px;
     margin-bottom: 3.2rem;
+}
+
+.heading-secondary{
+    font-size: 4.4rem;
+    line-height: 1.2rem;
+    margin-bottom: 9.6rem;
+}
+
+.subheading{
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #cf711f;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
 }
 
 .btn:link,
 .btn:visited {
     display: inline-block;
+
     text-decoration: none;
     font-size: 2rem;
     font-weight: 600;
