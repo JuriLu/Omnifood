@@ -148,9 +148,20 @@
 }
 
 /*Small beige box space on the left of the phone img*/
-.step-img-box::before {
+.step-img-box::before,
+.step-img-box::after {
     content: '';
     display: block;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.step-img-box::before {
     width: 60%;
     /*height: 60%;*/
 
@@ -158,16 +169,20 @@
     padding-bottom: 60%; /*Trick if height doesn't work*/
 
     background-color: #fdf2e9;
-    border-radius: 50%;
+    z-index: -2;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
 }
 
+.step-img-box::after {
+    width: 45%;
+    /*height: 60%;*/
 
+    /*60% of parents width*/
+    padding-bottom: 45%; /*Trick if height doesn't work*/
+
+    background-color: #fae5d3;
+    z-index: -1;
+}
 
 .step-img {
     width: 35%;
