@@ -350,13 +350,21 @@
 /*****************************/
 
 .section-testimonials {
-    padding: 9.6rem 0;
+    background-color: #fdf2e9;
+    display: grid;
+    grid-template-columns: 55fr 45fr; /* fr here can also be calculated like percentages, although they are not */
+    align-items: center;
 }
 
 .testimonials {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4.8rem;
+    row-gap: 4.8rem;
+    column-gap: 8rem;
+}
+
+.testimonials-container {
+    padding: 9.6rem;
 }
 
 .testimonial-img {
@@ -365,13 +373,34 @@
     margin-bottom: 1.2rem;
 }
 
-.testimonial-text{
+.testimonial-text {
     font-size: 1.8rem;
     line-height: 1.8;
     margin-bottom: 1.6rem;
 }
 
-.testimonial-name{
+.testimonial-name {
     font-size: 1.6rem;
-    color: #777;
+    color: #6f6f6f;
+}
+
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item img {
+    display: block; /* Remove annoying whitespaced between photos so they are stick to each-other */
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    padding: 1.6rem;
 }
