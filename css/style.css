@@ -484,7 +484,12 @@
 /*****************************/
 
 .section-cta {
-    padding: 9.6rem 0;
+    /* TOP, RIGHT, BOTTOM, LEFT */
+    /*padding: 9.6rem 0 12.8rem 0;*/
+
+    /* TOP / HORIZONTAL / LEFT */
+    padding: 9.6rem 0 12.8rem 0;
+
 }
 
 .cta {
@@ -568,7 +573,17 @@
 /*****************************/
 
 .footer {
-    padding: 9.6rem 0;
+    padding: 12.8rem 0;
+    border-top: 1px solid #eee;
+}
+
+.grid--footer {
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.logo-col {
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-logo {
@@ -585,6 +600,17 @@
     font-size: 1.4rem;
     line-height: 1.6;
     color: #767676;
+    margin-top: auto;
+}
+
+.contacts {
+    font-style: normal;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.address {
+    margin-bottom: 2.4rem;
 }
 
 .social-links {
