@@ -61,8 +61,12 @@
 html {
     /*
         font-size: 10px;
-        10px / 16px = 0.625 = 62.5%
+        10px / 100 px = 0.625 = 62.5%
         Percentage of user's browser font-size setting
+
+    100px --> Default browser font-size setting
+    10px --> how much we want it
+    62.5% --> The result !! rem WILL BE BASED FROM THIS PERCENTAGE
     */
     font-size: 62.5% /* all the font sizes with rem will be calculated starting from this */
 }
