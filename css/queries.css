@@ -24,3 +24,58 @@ Instead , 1rem = 1em = 16px
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/****************************************************/
+/* Below 1200px/75em (Landscape Tablet) */
+/****************************************************/
+@media (max-width: 75em ) {
+    html {
+        /*9 px / 16px = 0.5625 => 56.25%*/
+        font-size: 56.25%;
+    }
+
+    .grid {
+        column-gap: 4.8rem;
+        row-gap: 6.4rem;
+    }
+
+    .heading-secondary {
+        font-size: 3.6rem; /* Here we assume 1rem = 10px */
+    }
+
+    .heading-tertiary {
+        font-size: 2.4rem;
+    }
+
+    .header {
+        padding: 0 3.2rem;
+    }
+
+    .main-nav-list {
+        gap: 3.2rem;
+    }
+
+    .hero {
+        gap: 4.8rem;
+    }
+
+    .testimonials-container {
+        padding: 9.6rem 3.2rem;
+    }
+
+    .header {
+        padding: 0 3.2rem;
+    }
+
+    .hero {
+        gap: 4.8rem;
+    }
+
+    .main-nav-list {
+        gap: 3.2rem;
+    }
+
+    .testimonials-container {
+        padding: 9.6rem 3.2rem;
+    }
+}
