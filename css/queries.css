@@ -79,3 +79,20 @@ Instead , 1rem = 1em = 16px
         padding: 9.6rem 3.2rem;
     }
 }
+
+/****************************************************/
+/* Below 944px/75em (Tablet) */
+/****************************************************/
+@media (max-width: 59em ) {
+    html {
+       font-size: 50%;  /* 8px */
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-img {
+        width: 60%;
+    }
+}
