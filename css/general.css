@@ -1,87 +1,93 @@
 /*
 --- 01 TYPOGRAPHY SYSTEM
 
-    -Font size (px):
-    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
-    -Font weights:
-    Default: 400
-    Medium: 500
-    Semi-Bold: 600
-    Bold: 700
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
 
-    -Line heights:
-    Default: 1
-    Small: 1.05
-    Medium: 1.2
-    Paragraph default: 1.6
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
 
-    -Letter Spacing
-    0.5px
-    0.75px
+- Letter spacing
+-0.5px
+0.75px
 
 --- 02 COLORS
 
-    - Primary: #e67e22
-    - Tints:
-    #fdf2e9
-    #fae5d3
-    #eb984e
-    - Shades:
-    - Accents:
-    - Greys:
+- Primary: #e67e22
+- Tints:
+#fdf2e9
+#fae5d3
+#eb984e
 
-    #6f6f6f (lightest grey allowed on #fdf2e9
-    #555
-    #333
+- Shades:
+#cf711f
+#45260a
 
---- 03 SHADOWS
+- Accents:
+- Greys
 
-    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
 
+--- 05 SHADOWS
 
---- 04 BORDER-RADIUS
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
-    Default: 9px
-    Medium: 11px
+--- 06 BORDER-RADIUS
 
---- 05 WHITESPACE
+Default: 9px
+Medium: 11px
 
--SPACTING SYSTEM (px):
-    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+--- 07 WHITESPACE
 
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 html {
-    /*
-        font-size: 10px;
-        10px / 100 px = 0.625 = 62.5%
-        Percentage of user's browser font-size setting
+    /* font-size: 10px; */
 
-    100px --> Default browser font-size setting
-    10px --> how much we want it
-    62.5% --> The result !! rem WILL BE BASED FROM THIS PERCENTAGE
-    */
-    font-size: 62.5% /* all the font sizes with rem will be calculated starting from this */
+    /* 10px / 16px = 0.625 = 62.5% */
+    /* Percentage of user's browser font-size setting */
+    font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 body {
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik", sans-serif;
     line-height: 1;
     font-weight: 400;
     color: #555;
+
+    /* Only works if there is nothing absolutely positioned in relation to body */
+    overflow-x: hidden;
 }
 
-/*****************************/
-/*GENERAL REUSABLE COMPONENTS*/
-/*****************************/
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
+
 .container {
+    /* 1140px */
     max-width: 120rem;
     padding: 0 3.2rem;
     margin: 0 auto;
@@ -90,8 +96,14 @@ body {
 .grid {
     display: grid;
     column-gap: 6.4rem;
-    gap: 9.6rem;
+    row-gap: 9.6rem;
+
+    /* margin-bottom: 9.6rem; */
 }
+
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
 
 .grid:not(:last-child) {
     margin-bottom: 9.6rem;
@@ -109,20 +121,21 @@ body {
     grid-template-columns: repeat(4, 1fr);
 }
 
-.grid--5-cols {
-    grid-template-columns: repeat(5, 1fr);
-}
+/* .grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+} */
 
 .grid--center-v {
     align-items: center;
 }
 
-/* These propertieses are the same for primary and secondary */
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
     font-weight: 700;
-    color: #45260a;
+    color: #333;
+    /* color: #45260a; */
+    /* color: #343a40; */
     letter-spacing: -0.5px;
 }
 
@@ -139,7 +152,7 @@ body {
 }
 
 .heading-tertiary {
-    font-size: 3.0rem;
+    font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 3.2rem;
 }
@@ -151,6 +164,7 @@ body {
     color: #cf711f;
     text-transform: uppercase;
     margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
 }
 
 .btn,
@@ -164,17 +178,19 @@ body {
     padding: 1.6rem 3.2rem;
     border-radius: 9px;
 
-    /*Only Necessary for .btn, still for the others applied is OK*/
+    /* Only necessary for .btn */
     border: none;
     cursor: pointer;
     font-family: inherit;
 
+    /* Put transition on original "state" */
+    /* transition: background-color 0.3s; */
     transition: all 0.3s;
 }
 
 .btn--full:link,
 .btn--full:visited {
-    background-color: #e67322;
+    background-color: #e67e22;
     color: #fff;
 }
 
@@ -193,7 +209,7 @@ body {
 .btn--outline:active {
     background-color: #fdf2e9;
 
-    /*border: 3px solid white; !BORDER WILL BE ADDED ON THE OUTSIDE*/
+    /* border: 3px solid #fff; */
 
     /* Trick to add border inside */
     box-shadow: inset 0 0 0 3px #fff;
@@ -211,12 +227,12 @@ body {
     color: #555;
 }
 
-.link:visited,
-.link:link {
+.link:link,
+.link:visited {
     display: inline-block;
-    color: #e67322;
+    color: #e67e22;
     text-decoration: none;
-    border-bottom: 1px solid currentColor /* Gets the color of the text*/;
+    border-bottom: 1px solid currentColor;
     padding-bottom: 2px;
     transition: all 0.3s;
 }
@@ -239,20 +255,23 @@ body {
     display: flex;
     align-items: center;
     gap: 1.6rem;
+    line-height: 1.2;
 }
 
 .list-icon {
     width: 3rem;
     height: 3rem;
-    color: #e67322;
+    color: #e67e22;
 }
 
 *:focus {
-    outline: 4px dotted #e67322;
-    outline-offset: 8px;
+    outline: none;
+    /* outline: 4px dotted #e67e22; */
+    /* outline-offset: 8px; */
+    box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
 }
 
-/*HELPER CLASSES*/
+/* HELPER/SETTINGS CLASSES */
 .margin-right-sm {
     margin-right: 1.6rem !important;
 }
