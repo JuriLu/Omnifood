@@ -22,12 +22,9 @@ allLinks.forEach((link) => {
         console.log(href)
 
         // Scroll Back to top
-        if (href === "#") window.scrollTo(
-            {
-                top: 0,
-                behavior: "smooth"
-            }
-        )
+        if (href === "#") window.scrollTo({
+            top: 0, behavior: "smooth"
+        })
 
         // Scroll to other links
         if (href !== "#" && href.startsWith('#')) {
@@ -41,7 +38,27 @@ allLinks.forEach((link) => {
         }
     })
 })
+//Sticky navigation
+const sectionHeroEl = document.querySelector(".section-hero")
 
+const observer = new IntersectionObserver((entries) => {
+    const ent = entries[0]
+
+    if (!ent.isIntersecting) {
+        document.body.classList.add('sticky');
+    }
+
+    if (ent.isIntersecting) {
+        document.body.classList.remove('sticky');
+    }
+
+}, {
+    root: null, threshold: 0, rootMargin: '-80px'
+})
+
+observer.observe(sectionHeroEl)
+
+// Check flex for Safari
 function checkFlexGap() {
     var flex = document.createElement("div")
     flex.style.display = "flex"
