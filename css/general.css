@@ -71,8 +71,8 @@ html {
     font-size: 62.5%;
     overflow-x: hidden;
 
-    /* Scroll Behaviours */
-    scroll-behavior: smooth;
+    /* Scroll Behaviours NOTE: We could leave this here , but it may not work in every browser , so a new logic is needed */
+    /*scroll-behavior: smooth;*/
 }
 
 body {
